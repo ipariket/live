@@ -30,8 +30,9 @@ stationary{
 }
 h1{
     margin: auto;
-    width: 174px;
-    padding: 10px;
+    width: 172px;
+    padding: 15px;
+    line-height: 30px;
 }
 image{
     margin:auto;
