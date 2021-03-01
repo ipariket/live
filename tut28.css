@@ -34,10 +34,10 @@ h1{
     padding: 15px;
     line-height: 30px;
 }
-image{
+#img{
     width: 153px;
     margin: auto;
-    margin-left: 364px;
+   /* margin-left: 364px;
     border: 5px solid #ffeb3b;
     clear: both;
     line-height: 10px;
@@ -50,10 +50,11 @@ body{
 
 }
 /*just trying */
-element.style {
-    width: 153px;
+/* element.style { */
+/*     width: 153px;
     margin: auto;
     margin-left: 364px;
     border: 5px solid #ffeb3b;
     clear: both;
     line-height: 10px;
+ */
