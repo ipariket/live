@@ -1,0 +1,42 @@
+
+
+
+    .item{
+        border: solid 3px green ;
+     padding: 20px;
+        margin: 12px;
+        background-color: cadetblue;
+    }
+.container{
+    width: 900px;
+    border: 3px solid purple;
+    margin: 33px auto;
+    font-family: cursive;
+    line-height: 20px;
+    background-color: chocolate;
+    margin-top: 30px;
+}
+/* Float tag helps to keep alignment */
+/* clear tag helps to ignore the overlap on the element */
+/* text-align : tag helps to align the text  */
+#fruits{
+
+}
+#computer{
+
+}
+stationary{
+
+}
+h1{
+    margin: auto;
+    width: 174px;
+    padding: 10px;
+}
+body{
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: black;
+
+
+}
