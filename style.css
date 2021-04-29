@@ -207,3 +207,7 @@ justify-content: center;
 body{
 background:url(/b9c5e58543b8553bda7f17672ae39eec.gif) no-repeat center center/cover;
 }
+
+#myaudio{
+    opacity: 0;
+}
