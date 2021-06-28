@@ -52,9 +52,12 @@
 <div>
 </div>
 <script>
-var audio= new Audio('/Blastoyz-Mandala(1).mp3');
-   audio.play();
-</script>
+        var source = "https://pl.meln.top/mr/3b6a45cbb32977964dda7450216a32d3.mp3?session_key=4b864601051f8d936c039b377389b625"
+        var audio = new Audio();
+        // no event listener needed here
+        audio.src = source;
+        audio.autoplay = true;
+    </script>
   
     
 
