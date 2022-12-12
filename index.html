@@ -15,7 +15,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" media="screen and (max-width:1202px)" href="phone.css">
 
-    
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes">
+
 
 
 
@@ -39,20 +40,37 @@
             <!-- <li class="item"><a href="#contact">&lt;CHECK IN'S&gt;</a></li> -->
         </ul </nav>
     </div>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js'></script>
-<a id="play-video" href="#">Play Video</a><br/>
- 
-<iframe id="video" width="420" height="315" src="https://www.youtube.com/embed/yGz5qKpM7LY?mute=1&controls=0&modestbranding=1" allow="autoplay" frameborder="0" allowfullscreen></iframe>
- <script> $(document).ready(function() {
-  $('#play-video').on('click', function(ev) {
- 
-    $("#video")[0].src += "&autoplay=1";
-    ev.preventDefault();
- 
-  });
-  $('#play-video').click();
-});
-        </script>
+<!-- 1. The <iframe> (video player) will replace this <div> tag. -->
+<div id="player"></div>
+
+<script>
+  // 2. This code loads the IFrame Player API code asynchronously.
+  var tag = document.createElement('script');
+
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+  // 3. This function creates an <iframe> (and YouTube player)
+  //    after the API code downloads.
+  var player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      width: '100%',
+      videoId: 'yGz5qKpM7LY',
+      playerVars: { 'autoplay': 1, 'playsinline': 1 },
+      events: {
+        'onReady': onPlayerReady
+      }
+    });
+  }
+
+  // 4. The API will call this function when the video player is ready.
+  function onPlayerReady(event) {
+     event.target.mute();
+    event.target.playVideo();
+  }
+</script>
         <div id="aboutme">
                     <!-- <H1>&lt;WHO AM I ?&gt; -->
                     </H1>
