@@ -43,7 +43,17 @@
 <a id="play-video" href="#">Play Video</a><br/>
  
 <iframe id="video" width="420" height="315" src="https://www.youtube.com/embed/yGz5qKpM7LY?mute=1&controls=0&modestbranding=1" allow="autoplay" frameborder="0" allowfullscreen></iframe>
-  <div id="aboutme">
+ <script> $(document).ready(function() {
+  $('#play-video').on('click', function(ev) {
+ 
+    $("#video")[0].src += "&autoplay=1";
+    ev.preventDefault();
+ 
+  });
+  $('#play-video').click();
+});
+        </script>
+        <div id="aboutme">
                     <!-- <H1>&lt;WHO AM I ?&gt; -->
                     </H1>
                                         <p>Hi my name is  Pariket Koirala , I am currently doing my undergrad on Computer Science . I also like to record songs and upload them . I have currently 3+ millon views on my social platforms . I like Football, and Cristiano Ronaldo is my favorite player .  .
