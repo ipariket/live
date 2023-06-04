@@ -22,6 +22,20 @@
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HX1KR4QZG"></script>
 <script>
+    <script>
+  function checkPassword() {
+    var password = document.getElementById("password").value;
+    
+    if (password === "correct_password") { // Replace with the actual correct password
+      // Password is correct, show the desired content
+      document.getElementById("passwordForm").style.display = "none";
+      document.getElementById("correctContent").style.display = "block";
+    } else {
+      // Password is incorrect, show the password form again
+      alert("Incorrect password. Please try again.");
+    }
+  }
+</script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
