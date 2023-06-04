@@ -66,13 +66,24 @@
         <div id="aboutme">
                     <!-- <H1>&lt;WHO AM I ?&gt; -->
                     </H1>
-                            <p>           <div id="password-section">
- 
-    This content is password protected. Please enter the password to access the form
-  <form id="password-form">
-    <input type="password" id="password-input" placeholder="Enter password" required>
-    <button type="submit">Submit</button>
-  </form>
+                            <p>           <div class="container">
+  <div id="passwordForm">
+    <form onsubmit="event.preventDefault(); checkPassword();">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter the password">
+      <br>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <div id="correctContent" style="display: none;">
+    <h1>Welcome!</h1>
+    <p>This is the correct content that will be displayed when the password is correct.</p>
+  </div>
+
+  <div id="incorrectMessage" style="display: none;">
+    <p>Ops! The password is incorrect. Please try again.</p>
+  </div>
 </div>
 <!--                                             <a href="https://www.facebook.com/pariket.koirala.9">Facebook</a> -->
 <!--   /  <a href="https://www.instagram.com/pariket777">Instagram</a> <a href="https://www.youtube.com/@pariket7">Youtube Music </a> -->
