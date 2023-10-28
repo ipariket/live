@@ -201,7 +201,7 @@ justify-content: center;
 #aboutme{
     border-radius: 27px;
     border: 2px solid var(--primary);
-    background-color: black;
+    background-color: #eeeeee;
     /* padding: 10px 20px; */
 }
 body{
