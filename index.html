@@ -17,16 +17,6 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes">
 
-    <!-- YouTube Autoplay via JavaScript (Requires Click) -->
-    <script>
-        function playMusic() {
-            var audio = document.getElementById("youtubeAudio");
-            audio.src += "&autoplay=1";
-            document.removeEventListener("click", playMusic); // Prevent multiple triggers
-        }
-
-        document.addEventListener("click", playMusic); // Play music on any click
-    </script>
 </head>
 
 <body>
@@ -47,11 +37,23 @@
         </p>
     </div>
 
-    <!-- Hidden YouTube Audio Player (Only Audio) -->
-    <iframe id="youtubeAudio" width="0" height="0"
-        src="https://www.youtube.com/embed/jfKfPfyJRdk?loop=1&playlist=jfKfPfyJRdk"
-        frameborder="0" allow="autoplay">
-    </iframe>
+    <!-- Background Music (Google Drive MP3) -->
+    <audio id="background-audio" autoplay loop>
+        <source src="https://docs.google.com/uc?export=download&id=**YOUR_FILE_ID_HERE**" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var audio = document.getElementById("background-audio");
+            var playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    console.log("Autoplay blocked. User interaction required.");
+                });
+            }
+        });
+    </script>
 
 </body>
 
