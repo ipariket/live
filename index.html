@@ -1,58 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Pariket Koirala  </title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Mukta&family=Rubik&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <link rel="stylesheet" media="screen and (max-width:1202px)" href="phone.css">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes">
-
-    <!-- YouTube Autoplay via JavaScript (Requires Click) -->
-    <script>
-        function playMusic() {
-            var audio = document.getElementById("youtubeAudio");
-            audio.src += "&autoplay=1";
-            document.removeEventListener("click", playMusic); // Prevent multiple triggers
+    <title>Background Music</title>
+    <style>
+        /* Hide the video player */
+        #youtube-player {
+            position: absolute;
+            width: 0;
+            height: 0;
+            visibility: hidden;
         }
-
-        document.addEventListener("click", playMusic); // Play music on any click
-    </script>
+    </style>
 </head>
-
 <body>
 
-    <div class="container">
-        <h1 id="heading"></h1>
-        <img src="https://github.com/ipariket/live/blob/main/IMG_6724-removesbg-preview-fotor-2023072512148.png?raw=true" alt="">
-    </div>
+    <h1>Welcome to My Website</h1>
+    <p>Enjoy the background music while browsing.</p>
 
-    <div class="mainbox">
-        <nav id="navbar"></nav>
-        <li class="item" id="play"><a href="#home"> Pariket Koirala </a></li>
-    </div>
+    <!-- Hidden YouTube iframe (if needed) -->
+    <iframe id="youtube-player" 
+        src="https://www.youtube.com/embed/HJLb9XrEwKQ?autoplay=1&loop=1&playlist=HJLb9XrEwKQ&mute=0&controls=0&showinfo=0&modestbranding=1" 
+        frameborder="0" allow="autoplay"></iframe>
 
-    <div id="aboutme">
-        <p>
-         Hi, My name is Pariket Koirala. I am currently studying computer science, and I aspire to become a software developer for a significant part of my career. Later in life, I plan to pursue a career in politics to fulfill the legacy of my maternal Grandfather including the legacy of the Koirala Family.
-        </p>
-    </div>
+    <!-- Hidden audio player for MP3 -->
+    <audio id="bg-music" autoplay loop>
+        <source src="https://docs.google.com/uc?export=download&id=1ugfgr7iZeCKlQ9AV0jraxxpj97_akbwP" type="audio/mp3">
+        Your browser does not support the audio tag.
+    </audio>
 
-    <!-- Hidden YouTube Audio Player (Only Audio) -->
-    <iframe id="youtubeAudio" width="0" height="0"
-        src="https://www.youtube.com/embed/jfKfPfyJRdk?loop=1&playlist=jfKfPfyJRdk"
-        frameborder="0" allow="autoplay">
-    </iframe>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let player = document.getElementById("youtube-player");
+            player.src += "&autoplay=1"; // Ensures autoplay
+
+            let audio = document.getElementById("bg-music");
+            audio.volume = 1.0; // Set volume to 100%
+            audio.play().catch(error => {
+                console.log("Autoplay blocked. User interaction needed.");
+            });
+        });
+    </script>
 
 </body>
-
 </html>
