@@ -1,47 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Background Music</title>
-    <style>
-        /* Hide the video player */
-        #youtube-player {
-            position: absolute;
-            width: 0;
-            height: 0;
-            visibility: hidden;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Pariket</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* You can add additional styles here if needed */
+  </style>
 </head>
 <body>
-
-    <h1>Welcome to My Website</h1>
-    <p>Enjoy the background music while browsing.</p>
-
-    <!-- Hidden YouTube iframe (if needed) -->
-    <iframe id="youtube-player" 
-        src="https://www.youtube.com/embed/HJLb9XrEwKQ?autoplay=1&loop=1&playlist=HJLb9XrEwKQ&mute=0&controls=0&showinfo=0&modestbranding=1" 
-        frameborder="0" allow="autoplay"></iframe>
-
-    <!-- Hidden audio player for MP3 -->
-    <audio id="bg-music" autoplay loop>
-        <source src="https://docs.google.com/uc?export=download&id=1ugfgr7iZeCKlQ9AV0jraxxpj97_akbwP" type="audio/mp3">
-        Your browser does not support the audio tag.
-    </audio>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            let player = document.getElementById("youtube-player");
-            player.src += "&autoplay=1"; // Ensures autoplay
-
-            let audio = document.getElementById("bg-music");
-            audio.volume = 1.0; // Set volume to 100%
-            audio.play().catch(error => {
-                console.log("Autoplay blocked. User interaction needed.");
-            });
-        });
-    </script>
-
+  <h1>Welcome to Pariket's Website</h1>
+  <p>Enjoy the background music while browsing.</p>
+  
+  <!-- Hidden audio player for MP3 from Google Drive -->
+  <audio id="bg-music" autoplay loop>
+    <source src="https://docs.google.com/uc?export=download&id=1ugfgr7iZeCKlQ9AV0jraxxpj97_akbwP" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var audio = document.getElementById('bg-music');
+      audio.volume = 1.0; // Set volume to 100%
+      audio.play().catch(function(error) {
+        console.log('Autoplay may be blocked. User interaction might be required:', error);
+      });
+    });
+  </script>
 </body>
 </html>
