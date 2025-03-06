@@ -15,20 +15,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" media="screen and (max-width:1202px)" href="phone.css">
 
-            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0, user-scalable=yes">
 
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://media.tenor.com/i_jxgbLK8HIAAAAC/purple-moon.gif"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-7HX1KR4QZG');
-</script>
-
-  
+    <!-- YouTube Autoplay via JavaScript -->
+    <script>
+        function playMusic() {
+            var audio = document.getElementById("youtubeAudio");
+            audio.src += "&autoplay=1";
+        }
+        window.onload = function() {
+            setTimeout(playMusic, 2000); // Delay ensures autoplay works
+        };
+    </script>
 </head>
 
 <body>
@@ -38,39 +36,22 @@
         <img src="https://github.com/ipariket/live/blob/main/IMG_6724-removesbg-preview-fotor-2023072512148.png?raw=true" alt="">
     </div>
 
-
-        <div class="mainbox">
-            <nav id="navbar"></nav>
-
-            <li class="item" id="play"><a href="#home"> Pariket Koirala </a></li>
-            <!-- <li class="item"><a href="#services-container">&lt;MY SKILLS&gt;</a></li> -->
-            <!-- <li class="item"><a href="#client-section">&lt;EDUCATION&gt;</a></li> -->
-            <!-- <li class="item"><a href="#contact">&lt;CHECK IN'S&gt;</a></li> -->
-            </ul </nav>
-        </div>
-
-        <div id="aboutme">
-<!--             <H1>&lt;WHO AM I ?&gt; -->
-            </H1>
-            <p>
-
-             Hi , My name is Pariket Koirala. I am currently studying computer science, and I aspire to become a software developer for a significant part of my career. Later in life, I plan to pursue a career in politics to fullfill legacy of my maternal Grandfather including legacy of Koirala Family.
-            </p>
-
-
-
-        </div>
-
-
-    
-                                    
-      
-                                            
-        </div>
-    </div> 
-    </div>
+    <div class="mainbox">
+        <nav id="navbar"></nav>
+        <li class="item" id="play"><a href="#home"> Pariket Koirala </a></li>
     </div>
 
+    <div id="aboutme">
+        <p>
+         Hi, My name is Pariket Koirala. I am currently studying computer science, and I aspire to become a software developer for a significant part of my career. Later in life, I plan to pursue a career in politics to fulfill the legacy of my maternal Grandfather including the legacy of the Koirala Family.
+        </p>
+    </div>
+
+    <!-- Hidden YouTube Audio Player -->
+    <iframe id="youtubeAudio" width="0" height="0"
+        src="https://www.youtube.com/embed/jfKfPfyJRdk?loop=1&playlist=jfKfPfyJRdk"
+        frameborder="0" allow="autoplay">
+    </iframe>
 
 </body>
 
